@@ -18,11 +18,16 @@ body {
 wrapper {
   width: 100%;
 }
+
+
 h1 {
   font-size: 100px;
   color: #fff;
-
 }
+h3 h4 {
+ border-bottom: 2px solid black;
+}
+
 
 #column1 {
   display: inline-block;
@@ -34,6 +39,7 @@ h1 {
   display: inline-block;
   width: 49%;
   background-color: #cfd8dc;
+  overflow: auto;
 }
 
 .logo {
@@ -52,6 +58,8 @@ input {
   margin: 20em;
   background-color: #fff   
 }
+
+
 
 }
 /*END OF DESKTOP SCREEN MEDIA QUERY*/
