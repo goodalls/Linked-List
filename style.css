@@ -14,13 +14,13 @@ h1 {
 
 #column1 {
   display: inline-block;
-  width: 50%;
+  width: 49%;
   background-color: #455A64;
 }
 
 #column2 {
   display: inline-block;
-  width: 50%;
+  width: 49%;
   background-color: #cfd8dc;
 }
 
