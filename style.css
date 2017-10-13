@@ -5,14 +5,7 @@
 
 
 } 
-/*END OF MOBILE PHONE SCREEN MEDIA QUERY*/
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
- 
 
-
-
-}
 /*END OF TABLETS SCREEN MEDIA QUERY*/
 @media only screen and (min-width: 768px) {
     /* For desktop: */
@@ -53,9 +46,12 @@ input {
   width: 40%;
   display: block;
   margin: 15px auto;
-
 }
 
+.card {
+  margin: 20em;
+  background-color: #fff   
+}
 
 }
 /*END OF DESKTOP SCREEN MEDIA QUERY*/
