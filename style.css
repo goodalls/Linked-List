@@ -1,3 +1,22 @@
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+ 
+
+
+} 
+/*END OF MOBILE PHONE SCREEN MEDIA QUERY*/
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+ 
+
+
+
+}
+/*END OF TABLETS SCREEN MEDIA QUERY*/
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -33,5 +52,10 @@ input {
   height: 40px;
   width: 40%;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
+
 }
+
+
+}
+/*END OF DESKTOP SCREEN MEDIA QUERY*/
