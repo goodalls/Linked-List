@@ -1,101 +1,109 @@
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
- 
+  /* For mobile phones: */
+
 
 
 } 
+/*END OF MOBILE PHONE SCREEN MEDIA QUERY*/
 
-/*END OF TABLETS SCREEN MEDIA QUERY*/
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
+  /* For desktop: */
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
 
-wrapper {
-  width: 100%;
-}
+  wrapper {
+    width: 100%;
+  }
 
 
-h1 {
-  font-size: 40px;
-  color: #fff;
-  text-align: center;
-}
+  h1 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+  }
 
-#column1 {
-  display: inline-block;
-  width: 49%;
-  background-color: #455A64;
-  height: 100vh;
-}
+  #column1 {
+    background-color: #455A64;
+    display: inline-block;
+    height: 100vh;
+    width: 49%;
+  }
 
-#column2 {
-  height: 100vh;
-  position: absolute;
-  display: inline-block;
-  width: 49%;
-  background-color: #cfd8dc;
-  overflow: auto;
-}
+  #column2 {
+    background-color: #cfd8dc;
+    display: inline-block;
+    height: 100vh;
+    overflow: auto;
+    position: absolute;
+    width: 49%;
+  }
 
-.logo {
-  height: 100px;
-  width: 100px;
-}
+  .logo {
+    height: 100px;
+    width: 100px;
+  }
 
-input {
-  height: 40px;
-  width: 40%;
-  display: block;
-  margin: 15px auto;
-}
+  input {
+    display: block;
+    height: 40px;
+    margin: 15px auto;
+    width: 40%;
+  }
 
-/* The Cards Styles */
-.cards {
-  margin: 20px;
-  background-color: #fff;
-  min-height: 150px; 
-  position: relative;
-  border: 2px solid #607d8b
-}
 
-.title {
-  font-size: 30px;
- color: #455a64;
- margin: 0 20px;
-}
 
-.url {
-  font-size: 20px;
- color: #607d8b;
- text-decoration: underline;
- text-decoration-color: #f2f4f4;
- margin: 0 20px;
-}
 
-.bottom-right {
-  position: absolute;
+  /* The Cards Styles */
+
+  .cards {
+    background-color: #fff;
+    border: 2px solid #607d8b
+    margin: 20px;
+    min-height: 150px; 
+    position: relative;
+  }
+
+  .title {
+    font-size: 30px;
+    color: #455a64;
+    margin: 0 20px;
+  }
+
+  .url {
+    font-size: 20px;
+    color: #607d8b;
+    margin: 0 20px;
+    text-decoration-color: #f2f4f4;
+    text-decoration: underline;
+  }
+
+  .bottom-right {
     bottom:10px;
+    color: #455a64
     right: 20px;
-    color: #455a64
-}
+    text-decoration: underline;
+    position: absolute;
+    text-decoration-color: #f2f4f4;
+  }
 
-.bottom-left {
-  position: absolute;
+  .bottom-left {
     bottom:10px;
-    left: 20px;
     color: #455a64
-}
+    left: 20px;
+    text-decoration: underline;
+    position: absolute;
+    text-decoration-color: #f2f4f4;
+  }
 
-hr {
-     color: #cfd8dc;
-     width: 75%; 
-     height: 1px;
-}
+  hr {
+    color: #cfd8dc;
+    height: 1px;
+    width: 75%; 
+  }
 
 }
 /*END OF DESKTOP SCREEN MEDIA QUERY*/
