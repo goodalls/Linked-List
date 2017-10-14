@@ -21,13 +21,10 @@ wrapper {
 
 
 h1 {
-  font-size: 100px;
+  font-size: 40px;
   color: #fff;
+  text-align: center;
 }
-h3 h4 {
- border-bottom: 2px solid black;
-}
-
 
 #column1 {
   display: inline-block;
@@ -57,13 +54,48 @@ input {
   margin: 15px auto;
 }
 
+/* The Cards Styles */
 .cards {
   margin: 20px;
   background-color: #fff;
-  min-height: 150px;  
+  min-height: 150px; 
+  position: relative;
+  border: 2px solid #607d8b
 }
 
+.title {
+  font-size: 30px;
+ color: #455a64;
+ margin: 0 20px;
+}
 
+.url {
+  font-size: 20px;
+ color: #607d8b;
+ text-decoration: underline;
+ text-decoration-color: #f2f4f4;
+ margin: 0 20px;
+}
+
+.bottom-right {
+  position: absolute;
+    bottom:10px;
+    right: 20px;
+    color: #455a64
+}
+
+.bottom-left {
+  position: absolute;
+    bottom:10px;
+    left: 20px;
+    color: #455a64
+}
+
+hr {
+     color: #cfd8dc;
+     width: 75%; 
+     height: 1px;
+}
 
 }
 /*END OF DESKTOP SCREEN MEDIA QUERY*/
