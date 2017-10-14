@@ -33,9 +33,12 @@ h3 h4 {
   display: inline-block;
   width: 49%;
   background-color: #455A64;
+  height: 100vh;
 }
 
 #column2 {
+  height: 100vh;
+  position: absolute;
   display: inline-block;
   width: 49%;
   background-color: #cfd8dc;
@@ -54,9 +57,10 @@ input {
   margin: 15px auto;
 }
 
-.card {
-  margin: 20em;
-  background-color: #fff   
+.cards {
+  margin: 20px;
+  background-color: #fff;
+  min-height: 150px;  
 }
 
 
