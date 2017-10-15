@@ -27,7 +27,6 @@
   h1 {
     color: #fff;
     font-size: 70px;
-    margin: ;
     font-weight: 800;
   }
 
@@ -70,17 +69,17 @@
     display: block;
     font-size: 150%;
     height: 40px;
-    margin: 10% 7.5%;
-    width: 85%;
+    margin: 10% 0;
+    width: 100%;
   }
 
   #enter-button{
     background-color: #ffc107;
-    color: #ffffff;
+    color: #fff;
     font-size: 120%;
     height: 50px;
-    margin: 0% 7.5%;
-    width: 85%;
+    margin: 0%;
+    width: 100%;
   }
 
   #enter-button:hover{
@@ -98,7 +97,8 @@
   }
 
   .title {
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: 800;
     color: #455a64;
     margin: 15px 30px;
   }
