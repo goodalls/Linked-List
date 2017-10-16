@@ -264,6 +264,12 @@
     font-weight: 800;
   }
 
+  .url::after, a::bottom-left {
+    text-decoration: underline;
+    text-decoration-color: #cfd8dc;
+    color: #f05a28;
+  }
+
   hr {
     border-top: 1px solid #cfd8dc;
     height: 1px;
