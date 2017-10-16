@@ -20,39 +20,51 @@
   }
 
 
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    text-align: center;
-  }
+h1 {
+  color: #ffffff;
+  font-size: 100px;
+  margin: 200px 0 70px 0;
+}
 
-  #column1 {
-    background-color: #455A64;
-    display: inline-block;
-    height: 100vh;
-    width: 49%;
-  }
+#column1 {
+  background-color: #455A64;
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
 
-  #column2 {
-    background-color: #cfd8dc;
-    display: inline-block;
-    height: 100vh;
-    overflow: auto;
-    position: absolute;
-    width: 49%;
-  }
+#column2 {
+  background-color: #cfd8dc;
+  display: inline-block;
+  width: 49%;
+}
 
-  .logo {
-    height: 100px;
-    width: 100px;
-  }
+.logo {
+  height: 100px;
+  width: 100px;
+}
 
-  input {
-    display: block;
-    height: 40px;
-    margin: 15px auto;
-    width: 40%;
-  }
+input {
+  display: block;
+  font-size: 150%;
+  height: 40px;
+  margin: 0 auto 70px auto;
+  width: 85%;
+}
+
+#enter-button{
+  background-color: #ffc107;
+  color: #ffffff;
+  font-size: 120%;
+  height: 50px;
+  margin-bottom: 200px;
+  width: 85%;
+}
+
+#enter-button:hover{
+  background-color: #ffd773
+}
+}
 
 
 
@@ -60,44 +72,65 @@
   /* The Cards Styles */
 
   .cards {
-    background-color: #fff;
-    border: 2px solid #607d8b
+    border: 2px solid #607d8b;
+    background-color: #ffffff;
     margin: 20px;
     min-height: 150px; 
     position: relative;
   }
 
   .title {
-    font-size: 30px;
     color: #455a64;
-    margin: 0 20px;
+    font-size: 40px;
+    margin: 20px 20px;
   }
 
   .url {
-    font-size: 20px;
+    font-size: 25px;
     color: #607d8b;
-    margin: 0 20px;
+    margin: 30px 20px;
     text-decoration-color: #f2f4f4;
+    text-decoration: underline solid;
     text-decoration: underline;
+
   }
 
-  .bottom-right {
+  #bottom-right {
+    background-color: #ffffff;
+    border: none;
     bottom:10px;
-    color: #455a64
+    color: #455a64;
+    right: 40px;
     right: 20px;
-    text-decoration: underline;
     position: absolute;
+    text-decoration: underline;
     text-decoration-color: #f2f4f4;
   }
 
-  .bottom-left {
+   #bottom-right:hover{
+    text-decoration: underline;
+    text-decoration-color: #ffc107;
+  }
+ 
+
+  #bottom-left {
+    background-color: #ffffff;
+    border: none;
     bottom:10px;
     color: #455a64
     left: 20px;
-    text-decoration: underline;
     position: absolute;
+    text-decoration: underline;
     text-decoration-color: #f2f4f4;
   }
+
+   #bottom-left:hover{
+    background-color: #ffffff;
+    border: none;
+    text-decoration: underline;
+    text-decoration-color: #ffc107;
+  }
+
 
   hr {
     color: #cfd8dc;
@@ -106,4 +139,9 @@
   }
 
 }
+
+
+
+
+
 /*END OF DESKTOP SCREEN MEDIA QUERY*/
