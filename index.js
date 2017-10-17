@@ -3,7 +3,7 @@ var titleInput = document.querySelector('#website-title');
 var urlInput = document.querySelector('#website-url');
 var cardWebsiteTitle = document.querySelector('.title');
 var cardWebsiteUrl = document.querySelector('.url');
-
+var readButton = document.querySelector('.bottom-left');
 
 
 //Card Generator javaScript
@@ -11,14 +11,20 @@ enterButton.addEventListener('click', addCardElement);
 
 function addCardElement (event) {
 event.preventDefault()
-var title = titleInput.value
-var url = urlInput.value
+
 var newCard = document.createElement('article');
 newCard.classList.add('cards')
-newCard.innerHTML = '<p class="title">'+title+'</p><hr><p class="url"><a target="_blank" href="'+url+'">'+url+'</a></p><hr><button class="bottom-left">Read</button><button class="bottom-right">Delete</button></article>'
-var parent = document.getElementById('column2');
+newCard.innerHTML = `
+<p class="title">${titleInput.value}</p>
+<hr>
+<p class="url"><a target="_blank" href="${urlInput.value}">${urlInput.value}</a></p>
+<hr>
+<button class="bottom-left">Read</button>
+<button class="bottom-right">Delete</button>
+`
+var whereToPutElement = document.getElementById('column2');
 
-parent.prepend(newCard);
+whereToPutElement.prepend(newCard);
 };
 
 
@@ -31,8 +37,13 @@ function removeCard (e){
   }
 }
 
-//mark card as read 
-// var d = document.getElementById("bottom-left");
-// d.className += " after";
+//mark card as read by toggleing class ".after" to css
+readButton.addEventListener('click', addClassToCSS);
+
+function addClassToCSS () {
+  console.log('addClassToCSS is working')
+  readButton.classList.toggle('after')
+};
+
 
 
