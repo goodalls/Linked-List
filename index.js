@@ -24,6 +24,8 @@ titleInput.addEventListener('keyup', inputHandler);
 
 //Card Generator javaScript
 enterButton.addEventListener('click', addCardElement);
+enterButton.addEventListener('click', totalCard);
+
 
 function addCardElement (event) {
 event.preventDefault()
@@ -45,6 +47,11 @@ function removeCard (e){
   if($(e.target).hasClass('bottom-right')){
     $(e.target).parent().remove();
   }
+}
+
+function totalCard(){
+    var totalCards = $('.cards').length
+    $('.total-number-of-links').text(totalCards)
 }
 
 //mark card as read 
