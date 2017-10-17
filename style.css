@@ -290,3 +290,23 @@ hr {
     background-color: #999
   }
 
+  /*Table Styles*/
+
+  table{
+    border: solid 2px #455A64;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 94.4%;
+  }
+
+  td{
+    background-color: #fff;
+    color: #455A64;
+    font-size: 110%;
+    padding: 20px;
+    text-align: center;
+
+  }
+
+
+

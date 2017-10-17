@@ -1,4 +1,5 @@
 var enterButton = document.querySelector('#enter-button');
+var inputs = document.querySelector('.inputs');
 var titleInput = document.querySelector('#website-title');
 var urlInput = document.querySelector('#website-url');
 var cardWebsiteTitle = document.querySelector('.title');
@@ -17,7 +18,8 @@ var inputHandler = function() {
     }
    
 };
-titleInput.addEventListener('keyup', inputHandler);
+
+inputs.addEventListener('keyup', inputHandler);
 
 
 
@@ -56,7 +58,7 @@ function removeCard (e){
 }
 
 //mark card as read by toggleing class ".after" to css
-readButton.addEventListener('click', addClassToCSS);
+//readButton.addEventListener('click', addClassToCSS);
 
 function addClassToCSS () {
   console.log('addClassToCSS is working')
