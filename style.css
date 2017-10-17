@@ -97,7 +97,7 @@ input {
   text-decoration-color: #f2f4f4;
 }
 
-a.bottom-left {
+.bottom-left {
   position: absolute;
   color: #455a64;
   left: 40px;
@@ -105,6 +105,12 @@ a.bottom-left {
   text-decoration: underline;
   text-decoration-color: #f2f4f4;
 }
+
+.bottom-left:hover, .bottom-right:hover, .url:hover, a:hover{
+    border-bottom:1px solid #ffc107;
+    color: #455a64;
+    font-weight: 800;
+  }
 
 .after {
   text-decoration: underline;
@@ -204,6 +210,16 @@ hr {
     background-color: #ffd773
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+
+    text-decoration:none; 
+  }
+
   /* The Cards Styles */
 
   .cards {
@@ -224,9 +240,8 @@ hr {
   .url {
     font-size: 20px;
     color: #607d8b;
-    margin: 15px 30px 20px 30px;
-    text-decortion-color: #f2f4f4;
-    text-decoration: underline;
+    margin: 15px 30px 15px 30px;
+    border-bottom:1px solid #f2f4f4;
   }
 
   .bottom-right {
@@ -251,10 +266,12 @@ hr {
     border-bottom:1px solid #f2f4f4; 
   }
 
-  .bottom-left:hover, .bottom-right:hover, .url:hover {
+  .bottom-left:hover, .bottom-right:hover, .url:hover, a:hover{
     border-bottom:1px solid #ffc107;
     color: #455a64;
     font-weight: 800;
+    display: inline-block;
+    font-size: 20px;
   }
 
   .after {
