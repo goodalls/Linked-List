@@ -5,6 +5,8 @@ var urlInput = document.querySelector('#website-url');
 var cardWebsiteTitle = document.querySelector('.title');
 var cardWebsiteUrl = document.querySelector('.url');
 var readButton = document.querySelector('.bottom-left');
+var classCardsSection = document.querySelector('.class-cards-section');
+
 
 enterButton.disabled = true;
 enterButton.className = 'disabled';
@@ -42,7 +44,7 @@ newCard.innerHTML = `
 <button class="bottom-left">Read</button>
 <button class="bottom-right">Delete</button>
 `
-var whereToPutElement = document.getElementById('column2');
+var whereToPutElement = document.getElementById('cards-section');
 
 whereToPutElement.prepend(newCard);
 };
@@ -58,21 +60,25 @@ function removeCard (e){
 }
 
 //mark card as read by toggleing class ".after" to css
-//readButton.addEventListener('click', addClassToCSS);
 
-function addClassToCSS () {
+
+
+classCardsSection.addEventListener('click', addClassToCSS);
+
+
+function addClassToCSS (event) {
+  if (event.target.className === 'bottom-left')
   console.log('addClassToCSS is working')
-  readButton.classList.toggle('after')
+  classCardsSection.classList.toggle('after')
 };
+
 
 function totalCard(){
     var totalCards = $('.cards').length
     $('.total-number-of-links').text(totalCards)
 }
 
-//mark card as read 
-// var d = document.getElementById("bottom-left");
-// d.className += " after";
+
 
 
 
