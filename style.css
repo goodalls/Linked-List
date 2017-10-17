@@ -57,6 +57,8 @@ input {
 
 }
 
+
+
 #enter-button:hover{
   background-color: #ffd773
 }
@@ -284,5 +286,7 @@ hr {
     width: 90%; 
   }
 
-  }  /*END OF DESKTOP SCREEN MEDIA QUERY*/
+  .disabled{
+    background-color: #999
+  }
 

@@ -5,9 +5,27 @@ var cardWebsiteTitle = document.querySelector('.title');
 var cardWebsiteUrl = document.querySelector('.url');
 var readButton = document.querySelector('.bottom-left');
 
+enterButton.disabled = true;
+enterButton.className = 'disabled';
+
+var inputHandler = function() {
+    if(document.querySelector('input').value == ""){
+       console.log('im empty');
+       enterButton.disabled = true;  
+    } else {
+        enterButton.disabled = false;
+    }
+   
+};
+titleInput.addEventListener('keyup', inputHandler);
+
+
+
 
 //Card Generator javaScript
 enterButton.addEventListener('click', addCardElement);
+enterButton.addEventListener('click', totalCard);
+
 
 function addCardElement (event) {
 event.preventDefault()
@@ -44,6 +62,16 @@ function addClassToCSS () {
   console.log('addClassToCSS is working')
   readButton.classList.toggle('after')
 };
+
+function totalCard(){
+    var totalCards = $('.cards').length
+    $('.total-number-of-links').text(totalCards)
+}
+
+//mark card as read 
+// var d = document.getElementById("bottom-left");
+// d.className += " after";
+
 
 
 
