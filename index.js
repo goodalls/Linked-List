@@ -6,31 +6,33 @@ var cardWebsiteUrl = document.querySelector('.url');
 
 
 
+//Card Generator javaScript
+enterButton.addEventListener('click', addCardElement);
 
 function addCardElement (event) {
 event.preventDefault()
-console.log('addCardElement is working')
 var title = titleInput.value
 var url = urlInput.value
 var newCard = document.createElement('article');
-newCard.innerHTML = '<article class="cards"><p class="title">'+title+'</p><hr><p class="url"><a href="'+url+'">'+url+'</a></p><hr><a class="bottom-left" href="'+url+'">Read</a><a class="bottom-right" href="#">Delete</a></article>'
+newCard.classList.add('cards')
+newCard.innerHTML = '<p class="title">'+title+'</p><hr><p class="url"><a target="_blank" href="'+url+'">'+url+'</a></p><hr><button class="bottom-left">Read</button><button class="bottom-right">Delete</button></article>'
 var parent = document.getElementById('column2');
 
-// var currentDiv = document.getElementById("column2"); 
-
-parent.appendChild(newCard);
-
-// document.body.insertBefore(newCard, currentDiv);
-
-//   // create a new div element 
-//   // and give it some content 
-//   var newDiv = document.createElement("div"); 
-//   var newContent = document.createTextNode("Hi there and greetings!"); 
-//   newDiv.appendChild(newContent); //add the text node to the newly created div. 
-
-//   // add the newly created element and its content into the DOM 
-//   var currentDiv = document.getElementById("div1"); 
-//   document.body.insertBefore(newDiv, currentDiv);
+parent.prepend(newCard);
 };
 
-enterButton.addEventListener('click', addCardElement)
+
+//Removes card element when you click the delete button 
+$('#column2').on('click', removeCard);
+
+function removeCard (e){
+  if($(e.target).hasClass('bottom-right')){
+    $(e.target).parent().remove();
+  }
+}
+
+//mark card as read 
+// var d = document.getElementById("bottom-left");
+// d.className += " after";
+
+

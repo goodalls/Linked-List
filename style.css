@@ -104,7 +104,7 @@ a.bottom-left {
   text-decoration-color: #f2f4f4;
 }
 
-a:hover, .url:hover {
+.after {
   text-decoration: underline;
   text-decoration-color: #ffc107;
   color: #455a64;
@@ -227,32 +227,35 @@ hr {
     text-decoration: underline;
   }
 
-  a.bottom-right {
+  .bottom-right {
     position: absolute;
     bottom:10px;
     right: 40px;
     color: #455a64;
-    text-decoration: underline;
-    text-decoration-color: #f2f4f4;
+    background: none;
+    border: none;
+    font: inherit;
+    border-bottom:1px solid #f2f4f4; 
   }
 
-  a.bottom-left {
+  .bottom-left {
     position: absolute;
     color: #455a64;
     left: 40px;
     bottom: 10px;
-    text-decoration: underline;
-    text-decoration-color: #f2f4f4;
+    background: none;
+    border: none;
+    font: inherit;
+    border-bottom:1px solid #f2f4f4; 
   }
 
-  a:hover, .url:hover {
-    text-decoration: underline;
-    text-decoration-color: #ffc107;
+  .bottom-left:hover, .bottom-right:hover, .url:hover {
+    border-bottom:1px solid #ffc107;
     color: #455a64;
     font-weight: 800;
   }
 
-  .url::after, a::bottom-left {
+  .after {
     text-decoration: underline;
     text-decoration-color: #cfd8dc;
     color: #f05a28;
