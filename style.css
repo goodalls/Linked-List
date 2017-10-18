@@ -279,11 +279,15 @@ hr {
     font-size: 20px;
   }
 
-  .after {
+  .after-read {
+    background-color: #f2f4f4;
     text-decoration: underline;
-    text-decoration-color: #cfd8dc;
-    color: #f05a28;
+    text-decoration-color: #cfd8dc; 
   }
+
+  .after-read .bottom-left {
+    color: #f05a28;
+}
 
   hr {
     border-top: 1px solid #cfd8dc;
