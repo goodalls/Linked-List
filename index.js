@@ -17,12 +17,17 @@ var inputHandler = function() {
        console.log('im empty');
        userFeedbackText.innerHTML = "I'm Empty"
        enterButton.disabled = true;  
+
     } else {
         enterButton.disabled = false;
     } 
 };
 
-urlInput.addEventListener('keyup', inputHandler);
+
+
+$('.inputs').on('keyup', inputHandler);
+
+
 
 // function isUrlValid(urlInput) {
 //         var regexQuery = "/(http(s)?://.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/";
@@ -65,8 +70,8 @@ function resetInputFields (){
 
 
 //Card Generator javaScript
-enterButton.addEventListener('click', addCardElement);
-enterButton.addEventListener('click', totalCard);
+$('#enter-button').on('click', addCardElement);
+$('#enter-button').on('click', totalCard);
 
 
 function addCardElement (event) {
@@ -90,15 +95,24 @@ var whereToPutElement = document.getElementById('cards-section');
 
 whereToPutElement.prepend(newCard);
 
+  totalCard();
+  totalCardUnread()
 };
 
 
 //Removes card element when you click the delete button 
-$('#column2').on('click', removeCard);
+$('#column2').on('click', cardHandler);
 
-function removeCard (e){
+function cardHandler (e){
   if($(e.target).hasClass('bottom-right')){
     $(e.target).parent().remove();
+     totalCard();
+     totalCardRead();
+     totalCardUnread();
+  } else if ($(e.target).hasClass('bottom-left')){
+    $(e.target).parent().addClass('read');
+    totalCardRead();
+    totalCardUnread();
   }
 }
 
@@ -113,15 +127,46 @@ function addClassToCSS (event) {
 };
 
 
-function totalCard(){
+
+//classCardsSection.addEventListener('click', addClassToCSS);
+
+
+// function addClassToCSS (event) {
+//   if (event.target.className === 'bottom-left')
+//   console.log('addClassToCSS is working')
+//   classCardsSection.classList.toggle('after')
+// };
+
+$('.bottom-left').on('click',function(event) {
+  $('.cards').addClass('read');
+  console.log($('.cards'));
+})
+
+
+
+var totalCard = function(){
     var totalCards = $('.cards').length
     $('.total-number-of-links').text(totalCards)
 }
+
+var totalCardRead = function(){
+    var totalCards = $('.cards.read').length
+    $('.read-links').text(totalCards)
+}
+
+var totalCardUnread = function() {
+    var totalCards = $('.cards').length - $('.cards.read').length
+    $('.unread-links').text(totalCards)
+
+}
+
+
 
 //urlInput Validation for link
 function urlInputValidation(event) {
   event.preventDefault()
 }
+
 
 
 
