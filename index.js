@@ -107,16 +107,6 @@ function addClassToCSS (event) {
 };
 
 
-
-//classCardsSection.addEventListener('click', addClassToCSS);
-
-
-// function addClassToCSS (event) {
-//   if (event.target.className === 'bottom-left')
-//   console.log('addClassToCSS is working')
-//   classCardsSection.classList.toggle('after')
-// };
-
 $('.bottom-left').on('click',function(event) {
   $('.cards').addClass('read');
   console.log($('.cards'));
