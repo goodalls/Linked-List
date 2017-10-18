@@ -86,7 +86,7 @@ function cardHandler (e){
     totalCard();
     totalCardRead();
     totalCardUnread();
-    },2100)
+    },2010)
     } else if ($(e.target).hasClass('read-button')){
     $(e.target).parent().addClass('read');
     totalCardRead();
