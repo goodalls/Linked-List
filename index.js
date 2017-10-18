@@ -56,14 +56,18 @@ function removeCard (e){
     $(e.target).parent().remove();
   }
 }
+// function removeCard (event) {
+//   if (event.target.className === 'bottom-right')
+//   classCardsSection.remove('div')
+// };
 
-//mark card as read by toggleing class ".after" to css
+//mark card as read by toggleing class ".after-parent" to css
 classCardsSection.addEventListener('click', addClassToCSS);
 
 function addClassToCSS (event) {
-  if (event.target.className === 'bottom-left')
-  console.log('addClassToCSS is working')
-  classCardsSection.classList.toggle('after')
+  if (event.target.className === 'bottom-left'){
+  event.target.parentNode.classList.toggle('after-read')
+  }
 };
 
 
