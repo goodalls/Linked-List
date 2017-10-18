@@ -10,138 +10,143 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-
-
   h1 {
     color: #fff;
     font-size: 40px;
     font-weight: 800;
   }
 
-h3 {
+  h3 {
     color: #f05a28;
-    font-size: 40px;
+    font-size: 15px;
     font-weight: 800;
   }
 
   #column1 {
     background-color: #455A64;
     display: inline-block;
-    width: 100%;
     text-align: center;
-    /*height: 100vh;*/
+    width: 100%;
   }
 
-
-#column2 {
-  background-color: #cfd8dc;
-  display: inline-block;
-  width: 100%;
-}
-
-.logo {
-  height: 50px;
-  width: 50px;
-  vertical-align: text-top;
-}
-
-input {
-  display: block;
-  font-size: 150%;
-  height: 40px;
-  margin: 10% auto;
-  width: 90%;
-}
-
-#enter-button{
-  background-color: #ffc107;
-  color: #fff;
-  font-size: 120%;
-  height: 50px;
-  margin: 0 0 1em 0;
-  width: 90%;
-
-}
-
-
-
-#enter-button:hover{
-  background-color: #ffd773
-}
-
-/* The Cards Styles */
-
-.cards {
-  background-color: #fff;
-  border: 2px solid #607d8b;
-  min-height: 150px; 
-  position: relative;
-  margin: 20px 20px 15px 20px;
-}
-
-.title {
-  font-size: 25px;
-  font-weight: 800;
-  color: #455a64;
-  margin: 15px 30px;
-}
-
- .url {
-    font-size: 20px;
-    color: #607d8b;
-    margin: 15px 30px 15px 30px;
-    border-bottom:1px solid #f2f4f4;
-  }
-
-  .bottom-right {
-    position: absolute;
-    bottom:10px;
-    right: 40px;
-    color: #455a64;
-    background: none;
-    border: none;
-    font: inherit;
-    border-bottom:1px solid #f2f4f4; 
-  }
-
-  .bottom-left {
-    position: absolute;
-    color: #455a64;
-    left: 40px;
-    bottom: 10px;
-    background: none;
-    border: none;
-    font: inherit;
-    border-bottom:1px solid #f2f4f4; 
-  }
-
-  .bottom-left:hover, .bottom-right:hover, .url:hover, a:hover{
-    border-bottom:1px solid #ffc107;
-    color: #455a64;
-    font-weight: 800;
+  #column2 {
+    background-color: #cfd8dc;
     display: inline-block;
+    width: 100%;
+  }
+
+  .logo {
+    height: 50px;
+    vertical-align: text-top;
+    width: 50px;
+  }
+
+  input {
+    display: block;
+    font-size: 150%;
+    height: 40px;
+    margin: 10% auto;
+    width: 90%;
+  }
+
+  #enter-button{
+    background-color: #ffc107;
+    color: #fff;
+    font-size: 120%;
+    height: 50px;
+    margin: 0 0 1em 0;
+    width: 90%;
+
+  }
+
+  #enter-button:hover{
+    background-color: #ffd773
+  }
+
+  /* The Cards Styles */
+  .cards {
+    background-color: #fff;
+    border: 2px solid #607d8b;
+    margin: 20px 20px 15px 20px;
+    min-height: 150px; 
+    position: relative;
+  }
+
+  .title {
+    color: #455a64;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 15px 30px;
+  }
+
+  .url {
+    text-decoration: underline #f2f4f4;
+    color: #607d8b;
     font-size: 20px;
+    margin: 15px 30px 15px 30px;
+  }
+
+  .delete-button {
+    background: none;
+    text-decoration: underline #f2f4f4; 
+    border: none;
+    bottom:10px;
+    color: #455a64;
+    font: inherit;
+    position: absolute;
+    right: 40px;
+  }
+
+  .read-button {
+    background: none;
+    text-decoration: underline #f2f4f4;
+    border: none;
+    bottom: 10px;
+    color: #455a64;
+    font: inherit;
+    left: 40px;
+    position: absolute;
+  }
+
+  .read-button:hover, .delete-button:hover, .url:hover, a:hover{
+    text-decoration: underline #ffc107;
+    color: #455a64;
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .after-read {
     background-color: #f2f4f4;
-    text-decoration: underline;
     text-decoration-color: #cfd8dc; 
+    text-decoration: underline;
   }
 
-  .after-read .bottom-left {
+  .after-read .read-button {
     color: #f05a28;
-}
+  }
 
-hr {
-  border-top: 1px solid #cfd8dc;
-  height: 1px;
-  width: 90%; 
-}
+  hr {
+    border-top: 1px solid #cfd8dc;
+    height: 1px;
+    width: 90%; 
+  }
 
+  /*Table Styles*/
+  table{
+    border: solid 2px #607d8b;
+    height: 5%;
+    margin: 20px 20px 15px 20px;
+  }
 
-
-} /*END OF MOBILE PHONE SCREEN MEDIA QUERY*/
+  td{
+    background-color: #fff;
+    color: #455A64;
+    font-size: 110%;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+  }
+  } /*END OF MOBILE PHONE SCREEN MEDIA QUERY*/
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -156,10 +161,9 @@ hr {
   }
 
   .wrapper {
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
-
 
   h1 {
     color: #fff;
@@ -169,44 +173,44 @@ hr {
 
   h3 {
     color: #f05a28;
-    font-size: 40px;
+    font-size: 15px;
     font-weight: 800;
   }
 
   #column1 {
     background-color: #455A64;
     display: inline-block;
-    width: 50%;
-    text-align: center;
-    position: relative;
-    top: 0;
-    left: 0;
     height: 100vh;
+    left: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 50%;
   }
 
   .centering {
-    position: absolute;
-    top: 50%;
     left: 50%;
     margin-right: -50%;
+    position: absolute;
+    top: 50%;
     transform: translate(-50%, -50%)
   }
 
   #column2 {
     background-color: #cfd8dc;
     display: inline-block;
-    width: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    overflow: auto;
     height: 100vh;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
   }
 
   .logo {
     height: 100px;
-    width: 100px;
     vertical-align: text-top;
+    width: 100px;
   }
 
   input {
@@ -237,7 +241,7 @@ hr {
 
   a:hover {
 
-    text-decoration:none; 
+    text-decoration: none; 
   }
 
   /* The Cards Styles */
@@ -245,64 +249,63 @@ hr {
   .cards {
     background-color: #fff;
     border: 2px solid #607d8b;
+    margin: 20px 20px 15px 20px;
     min-height: 150px; 
     position: relative;
-    margin: 20px 20px 15px 20px;
   }
 
   .title {
+    color: #455a64;
     font-size: 25px;
     font-weight: 800;
-    color: #455a64;
     margin: 15px 30px;
   }
 
   .url {
-    font-size: 20px;
+    text-decoration: underline #f2f4f4;
     color: #607d8b;
-    margin: 15px 30px 15px 30px;
-    border-bottom:1px solid #f2f4f4;
-  }
-
-  .bottom-right {
-    position: absolute;
-    bottom:10px;
-    right: 40px;
-    color: #455a64;
-    background: none;
-    border: none;
-    font: inherit;
-    border-bottom:1px solid #f2f4f4; 
-  }
-
-  .bottom-left {
-    position: absolute;
-    color: #455a64;
-    left: 40px;
-    bottom: 10px;
-    background: none;
-    border: none;
-    font: inherit;
-    border-bottom:1px solid #f2f4f4; 
-  }
-
-  .bottom-left:hover, .bottom-right:hover, .url:hover, a:hover{
-    border-bottom:1px solid #ffc107;
-    color: #455a64;
-    font-weight: 800;
-    display: inline-block;
     font-size: 20px;
+    margin: 15px 30px 15px 30px;
+  }
+
+  .delete-button {
+    background: none;
+    text-decoration: underline #f2f4f4;
+    border: none;
+    bottom:10px;
+    color: #455a64;
+    font: inherit;
+    position: absolute;
+    right: 40px;
+  }
+
+  .read-button {
+    background: none;
+    text-decoration: underline #f2f4f4;
+    border: none;
+    bottom: 10px;
+    color: #455a64;
+    font: inherit;
+    left: 40px;
+    position: absolute;
+  }
+
+  .read-button:hover, .delete-button:hover, .url:hover, a:hover{
+    text-decoration: underline #ffc107;
+    color: #455a64;
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .after-read {
     background-color: #f2f4f4;
-    text-decoration: underline;
     text-decoration-color: #cfd8dc; 
+    text-decoration: underline;
   }
 
-  .after-read .bottom-left {
+  .after-read .read-button {
     color: #f05a28;
-}
+  }
 
   hr {
     border-top: 1px solid #cfd8dc;
@@ -315,13 +318,10 @@ hr {
   }
 
   /*Table Styles*/
-
   table{
-    border: solid 2px #455A64;
+    border: solid 2px #607d8b;
     height: 5%;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 94.4%;
+    margin: 20px 20px 15px 20px;
   }
 
   td{
@@ -331,7 +331,6 @@ hr {
     font-weight: 600;
     padding: 10px;
     text-align: center;
-
   }
 
 
