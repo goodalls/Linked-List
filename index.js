@@ -60,7 +60,7 @@ function addCardElement (event) {
     resetErrorFields()
   }
   if(/^(http[s]?:\/\/)/.test(urlInput.value) === false) {
-        urlInput.value = 'https://' + urlInput.value;
+        urlInput.value = 'http://' + urlInput.value;
     }
   var newCard = document.createElement('article');
   newCard.classList.add('cards')
@@ -79,11 +79,15 @@ function addCardElement (event) {
 
 function cardHandler (e){
   if($(e.target).hasClass('delete-button')){
-    $(e.target).parent().remove();
+    $(e.target).parent().fadeOut(2000, function (){
+      $(e.target).parent().remove();
+    });
+    setTimeout( function (){
     totalCard();
     totalCardRead();
     totalCardUnread();
-  } else if ($(e.target).hasClass('read-button')){
+    },2100)
+    } else if ($(e.target).hasClass('read-button')){
     $(e.target).parent().addClass('read');
     totalCardRead();
     totalCardUnread();
