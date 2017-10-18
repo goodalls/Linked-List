@@ -5,22 +5,44 @@ var cardWebsiteTitle = document.querySelector('.title');
 var cardWebsiteUrl = document.querySelector('.url');
 var readButton = document.querySelector('.bottom-left');
 var classCardsSection = document.querySelector('.class-cards-section');
-
+var userFeedbackText = document.querySelector('.user-feedback')
 
 enterButton.disabled = true;
 enterButton.className = 'disabled';
 
+enterButton.addEventListener('click', inputHandler);
+
 var inputHandler = function() {
-    if(document.querySelector('input').value == ""){
+    if( titleInput.value == ""){
        console.log('im empty');
+       userFeedbackText.innertext = "I'm Empty"
        enterButton.disabled = true;  
     } else {
         enterButton.disabled = false;
-    }
-   
+    } 
 };
-titleInput.addEventListener('keyup', inputHandler);
 
+urlInput.addEventListener('keyup', inputHandler);
+
+// function isUrlValid(urlInput) {
+//         var regexQuery = "/(http(s)?://.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/";
+//         var url = new RegExp(regexQuery,"g");
+        
+//         if (url.match(urlInput)) {
+//             alert('Great, you entered a valid address');
+//             console.log('needs to be a http value...');
+//             enterButton.disabled = true; 
+//         }
+//         console.log('works for me!');
+//         return false;
+//     }
+
+// function urlInputValidator(event) {
+//   if (urlInput.value === urlInput.value.includes("http"))  {
+//         console.log('needs to be a http value...');
+//         enterButton.disabled = true; 
+//     };
+// };
 
 
 
@@ -31,7 +53,6 @@ enterButton.addEventListener('click', totalCard);
 
 function addCardElement (event) {
 event.preventDefault()
-
 var newCard = document.createElement('article');
 newCard.classList.add('cards')
 newCard.innerHTML = `
@@ -45,6 +66,7 @@ newCard.innerHTML = `
 var whereToPutElement = document.getElementById('cards-section');
 
 whereToPutElement.prepend(newCard);
+
 };
 
 
@@ -74,6 +96,11 @@ function addClassToCSS (event) {
 function totalCard(){
     var totalCards = $('.cards').length
     $('.total-number-of-links').text(totalCards)
+}
+
+//urlInput Validation for link
+function urlInputValidation(event) {
+  event.preventDefault()
 }
 
 
