@@ -15,7 +15,7 @@ enterButton.addEventListener('click', inputHandler);
 var inputHandler = function() {
     if( titleInput.value == ""){
        console.log('im empty');
-       userFeedbackText.innertext = "I'm Empty"
+       userFeedbackText.innerHTML = "I'm Empty"
        enterButton.disabled = true;  
 
     } else {
@@ -49,6 +49,24 @@ $('.inputs').on('keyup', inputHandler);
 //     };
 // };
 
+function urlInputValidator() {
+    var urlInputValue = urlInput.value
+    var res = urlInputValue.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    if(res == null) {
+      console.log('urlInputValidator if statement')
+      userFeedbackText.innerHTML = "not a valid URL, try again.";
+      return false;
+    } else {
+      console.log('urlInputValidator else statement')
+    }
+};
+
+//reset input fields
+function resetInputFields (){
+  titleInput.innerHTML = "";
+  urlInput.innerHTML = "";
+  userFeedbackText.innerHTML = "";
+}
 
 
 //Card Generator javaScript
@@ -57,22 +75,25 @@ $('#enter-button').on('click', totalCard);
 
 
 function addCardElement (event) {
+event.preventDefault()
+if (urlInputValidator() === false) {
+  setTimeout(resetInputFields, 5000)
+  return false;
+}
 
-  event.preventDefault()
+var newCard = document.createElement('article');
+newCard.classList.add('cards')
+newCard.innerHTML = `
+<p class="title">${titleInput.value}</p>
+<hr>
+<p class="url"><a target="_blank" href="${urlInput.value}">${urlInput.value}</a></p>
+<hr>
+<button class="bottom-left">Read</button>
+<button class="bottom-right">Delete</button>
+`
+var whereToPutElement = document.getElementById('cards-section');
 
-  var newCard = document.createElement('article');
-  newCard.classList.add('cards')
-
-  newCard.innerHTML = `
-  <p class="title">${titleInput.value}</p>
-  <hr>
-  <p class="url"><a target="_blank" href="${urlInput.value}">${urlInput.value}</a></p>
-  <hr>
-  <button class="bottom-left">Read</button>
-  <button class="bottom-right">Delete</button>
-  `
-  var whereToPutElement = document.getElementById('cards-section');
-  whereToPutElement.prepend(newCard);
+whereToPutElement.prepend(newCard);
 
   totalCard();
   totalCardUnread()
@@ -96,8 +117,7 @@ function cardHandler (e){
 }
 
 
-
-//mark card as read by toggleing class ".after-parent" to css
+//mark card as read by toggleing class ".after-read" to css
 classCardsSection.addEventListener('click', addClassToCSS);
 
 function addClassToCSS (event) {

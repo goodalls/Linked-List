@@ -18,6 +18,12 @@
     font-weight: 800;
   }
 
+h3 {
+    color: #f05a28;
+    font-size: 40px;
+    font-weight: 800;
+  }
+
   #column1 {
     background-color: #455A64;
     display: inline-block;
@@ -117,11 +123,14 @@ input {
     font-size: 20px;
   }
 
-.after {
-  text-decoration: underline;
-  text-decoration-color: #ffc107;
-  color: #455a64;
-  font-weight: 800;
+  .after-read {
+    background-color: #f2f4f4;
+    text-decoration: underline;
+    text-decoration-color: #cfd8dc; 
+  }
+
+  .after-read .bottom-left {
+    color: #f05a28;
 }
 
 hr {
@@ -155,6 +164,12 @@ hr {
   h1 {
     color: #fff;
     font-size: 70px;
+    font-weight: 800;
+  }
+
+  h3 {
+    color: #f05a28;
+    font-size: 40px;
     font-weight: 800;
   }
 
