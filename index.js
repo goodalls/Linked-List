@@ -15,9 +15,9 @@ enterButton.addEventListener('click', inputHandler);
 var inputHandler = function() {
     if( titleInput.value == ""){
        console.log('im empty');
-       userFeedbackText.innerHTML = "I'm Empty"
+       userFeedbackText.innerHTML = "The input is empty, please add something"
        enterButton.disabled = true;  
-
+      return false;
     } else {
         enterButton.disabled = false;
     } 
@@ -62,9 +62,8 @@ function urlInputValidator() {
 };
 
 //reset input fields
-function resetInputFields (){
-  titleInput.innerHTML = "";
-  urlInput.innerHTML = "";
+function resetErrorFields (){
+
   userFeedbackText.innerHTML = "";
 }
 
@@ -77,8 +76,13 @@ $('#enter-button').on('click', totalCard);
 function addCardElement (event) {
 event.preventDefault()
 if (urlInputValidator() === false) {
-  setTimeout(resetInputFields, 5000)
+  setTimeout(resetErrorFields, 5000)
   return false;
+} if (inputHandler() === false) {
+  setTimeout(resetErrorFields, 5000)
+  return false;
+} else {
+  resetErrorFields()
 }
 
 var newCard = document.createElement('article');
