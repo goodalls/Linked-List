@@ -115,13 +115,13 @@
     font-weight: 800;
   }
 
-  .after-read {
+  .read {
     background-color: #f2f4f4;
     text-decoration-color: #cfd8dc; 
     text-decoration: underline;
   }
 
-  .after-read .read-button {
+  .read .read-button {
     color: #f05a28;
   }
 
@@ -297,13 +297,13 @@
     font-weight: 800;
   }
 
-  .after-read {
+  .read {
     background-color: #f2f4f4;
     text-decoration-color: #cfd8dc; 
     text-decoration: underline;
   }
 
-  .after-read .read-button {
+  .read .read-button {
     color: #f05a28;
   }
 

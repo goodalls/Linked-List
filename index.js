@@ -36,48 +36,53 @@ enterButton.className = 'disabled';
 
 
 function urlInputValidator() {
-  var urlInputValue = urlInput.value
-  var res = urlInputValue.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-  if(res == null) {
-    userFeedbackText.innerHTML = "not a valid URL, try again.";
-    return false;
-  } 
+
+    var urlInputValue = urlInput.value
+    var res = urlInputValue.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    if (res == null) {
+        userFeedbackText.innerHTML = "not a valid URL, try again.";
+        return false;
+    }
 };
 
-function resetErrorFields (){
-  userFeedbackText.innerHTML = "";
+function resetErrorFields() {
+    userFeedbackText.innerHTML = "";
 };
 
-function addCardElement (event) {
-  event.preventDefault()
-  if (urlInputValidator() === false) {
-    setTimeout(resetErrorFields, 5000)
-    return false;
-  } if (inputHandler() === false) {
-    setTimeout(resetErrorFields, 5000)
-    return false;
-  } else {
-    resetErrorFields()
-  }
-  if(/^(http[s]?:\/\/)/.test(urlInput.value) === false) {
+function addCardElement(event) {
+    event.preventDefault()
+    if (urlInputValidator() === false) {
+        setTimeout(resetErrorFields, 5000)
+        return false;
+    }
+    if (inputHandler() === false) {
+        setTimeout(resetErrorFields, 5000)
+        return false;
+    } else {
+        resetErrorFields()
+    }
+    if (/^(http[s]?:\/\/)/.test(urlInput.value) === false) {
         urlInput.value = 'http://' + urlInput.value;
     }
-  var newCard = document.createElement('article');
-  newCard.classList.add('cards')
-  newCard.innerHTML = `
+    var newCard = document.createElement('article');
+    newCard.classList.add('cards')
+    newCard.innerHTML = `
   <p class="title">${titleInput.value}</p>
   <hr>
   <p class="url"><a target="_blank" href="${urlInput.value}">${urlInput.value}</a></p>
   <hr>
   <button class="read-button">Read</button>
   <button class="delete-button">Delete</button>`
-  var whereToPutElement = document.getElementById('cards-section');
-  whereToPutElement.prepend(newCard);
-  totalCard();
-  totalCardUnread()
+
+    var whereToPutElement = document.getElementById('cards-section');
+    whereToPutElement.prepend(newCard);
+    totalCard();
+    totalCardUnread()
 };
 
+
 function cardHandler (e){
+  var elParent = $(e.target).parent();
   if($(e.target).hasClass('delete-button')){
     $(e.target).parent().fadeOut(2000, function (){
       $(e.target).parent().remove();
@@ -88,22 +93,16 @@ function cardHandler (e){
     totalCardUnread();
     },2010)
     } else if ($(e.target).hasClass('read-button')){
-    $(e.target).parent().addClass('read');
-    totalCardRead();
-    totalCardUnread();
+       if (elParent.hasClass('read')) {
+            elParent.removeClass('read');
+        } else {
+            elParent.addClass('read');
+        }
+      totalCardRead();
+      totalCardUnread();
   }
 }
 
-function addClassToCSS (event) {
-  if (event.target.className === 'read-button'){
-    event.target.parentNode.classList.toggle('after-read')
-  }
-};
-
-$('.read-button').on('click',function(event) {
-  $('.cards').addClass('read');
-  console.log($('.cards'));
-})
 
 //Event Listeners
 $('.inputs').on('keyup', inputHandler);
@@ -111,4 +110,13 @@ enterButton.addEventListener('click', inputHandler);
 $('#enter-button').on('click', addCardElement);
 $('#enter-button').on('click', totalCard);
 $('#column2').on('click', cardHandler);
-classCardsSection.addEventListener('click', addClassToCSS);
+
+
+
+
+
+
+
+
+
+
